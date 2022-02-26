@@ -23,5 +23,23 @@ namespace Electric_shop
         {
             InitializeComponent();
         }
+
+        private void AddKlient_Click(object sender, RoutedEventArgs e)
+        {
+            new Klient().Show();
+            this.Close();
+        }
+
+        private void AddChek_Click(object sender, RoutedEventArgs e)
+        {
+            new Chek().Show();
+            this.Close();
+        }
+
+        private void AddOtch_Click(object sender, RoutedEventArgs e)
+        {
+            new Otchet().Show();
+            this.Close();
+        }
     }
 }

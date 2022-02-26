@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Electric_shop"
         mc:Ignorable="d"
-        Title="Personal" Height="450" Width="800">
-    <Grid>
-        
+        Title="Admin" Height="450" Width="800">
+    <Grid Background="SkyBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Name="AddKlient" Content="Ред. клиентов" Background="White" Grid.Row="1" Grid.Column="1" Margin="2" Click="AddKlient_Click"/>
+        <Button Name="AddChek" Content="Ред. чеков" Background="White" Grid.Row="2" Grid.Column="1" Margin="2" Click="AddChek_Click"/>
+        <Button Name="AddOtch" Content="Ред. отчетов" Background="White" Grid.Row="3" Grid.Column="1" Margin="2" Click="AddOtch_Click"/>
     </Grid>
 </Window>

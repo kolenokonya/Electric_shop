@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Electric_shop"
         mc:Ignorable="d"
-        Title="AddPers" Height="450" Width="800">
+        Title="Сотрудники" Height="450" Width="800">
     <Grid Background="SkyBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -26,7 +26,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="Familiya" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" >
+        <TextBox x:Name="Familiya" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10,10,9,10" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -51,7 +51,7 @@
             </TextBox.Style>
         </TextBox>
 
-        <TextBox x:Name="Imya" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" >
+        <TextBox x:Name="Imya" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10,10,9,10" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -76,7 +76,7 @@
             </TextBox.Style>
         </TextBox>
 
-        <TextBox x:Name="Otchestvo" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" >
+        <TextBox x:Name="Otchestvo" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10,10,9,10" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -101,7 +101,7 @@
             </TextBox.Style>
         </TextBox>
 
-        <TextBox x:Name="Login" Grid.Row="1" Grid.Column="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" >
+        <TextBox x:Name="Login" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -126,7 +126,7 @@
             </TextBox.Style>
         </TextBox>
 
-        <TextBox x:Name="Password" Grid.Row="2" Grid.Column="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" >
+        <TextBox x:Name="Password" Grid.Column="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10,10,10,11" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -151,7 +151,7 @@
             </TextBox.Style>
         </TextBox>
 
-        <TextBox x:Name="SeriaPass" Grid.Row="1" Grid.Column="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" >
+        <TextBox x:Name="SeriaPass" Grid.Row="1" Grid.Column="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -176,7 +176,7 @@
             </TextBox.Style>
         </TextBox>
 
-        <TextBox x:Name="NomerPass" Grid.Row="2" Grid.Column="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="8" >
+        <TextBox x:Name="NomerPass" Grid.Row="2" Grid.Column="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10,6,6,10" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -201,9 +201,9 @@
             </TextBox.Style>
         </TextBox>
 
-        <DatePicker Name="BDay" Grid.Row="3" Grid.Column="5" Margin="10"/>
+        <DatePicker Name="BDay" Grid.Row="3" Grid.Column="6" Margin="10"/>
 
-        <TextBox x:Name="Adres" Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" Grid.ColumnSpan="2" >
+        <TextBox x:Name="Adres" Grid.Row="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" Grid.ColumnSpan="2" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -228,7 +228,7 @@
             </TextBox.Style>
         </TextBox>
 
-        <TextBox x:Name="Telefon" Grid.Row="5" Grid.Column="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" Grid.ColumnSpan="2" >
+        <TextBox x:Name="Telefon" Grid.Row="5" Grid.Column="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="10" Grid.ColumnSpan="2" >
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
@@ -253,7 +253,12 @@
             </TextBox.Style>
         </TextBox>
 
+        <ListBox Name="LB" Grid.Column="2" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="3" MouseDoubleClick="Polzovateli_MouseDoubleClick"/>
+
         <Button Name="Create" Content="Создать" Grid.Row="6" Grid.Column="1" Background="White" Margin="10" Click="Create_Click"/>
         <Button Name="Cancel" Content="Отмена" Grid.Row="6" Grid.Column="5" Background="White" Margin="10" Click="Cancel_Click"/>
+        <Button Name="Change" Content="Изменить" Grid.Row="6" Grid.Column="2" Background="White" Margin="10" Click="Change_Click"/>
+        <Button Name="Delete" Content="Удалить" Grid.Row="6" Grid.Column="3" Background="White" Margin="10" Click="Delete_Click"/>
+        
     </Grid>
 </Window>

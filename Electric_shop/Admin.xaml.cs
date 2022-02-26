@@ -29,5 +29,23 @@ namespace Electric_shop
             new AddPers().Show();
             this.Close();
         }
+
+        private void AddTovar_Click(object sender, RoutedEventArgs e)
+        {
+            new Tovar().Show();
+            this.Close();
+        }
+
+        private void AddKateg_Click(object sender, RoutedEventArgs e)
+        {
+            new Kategorii().Show();
+            this.Close();
+        }
+
+        private void AddSklad_Click(object sender, RoutedEventArgs e)
+        {
+            new Sklad().Show();
+            this.Close();
+        }
     }
 }
