@@ -37,7 +37,7 @@ namespace Electric_shop
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            new Admin().Show();
+            new Personal().Show();
             this.Close();
         }
 
@@ -49,7 +49,7 @@ namespace Electric_shop
                 {
                     pers.InsertQuery(Date.Text, Convert.ToInt32(Combo.SelectedValue),Convert.ToInt32(Pers.SelectedValue), Convert.ToInt32(Klient.SelectedValue));
 
-                    new Admin().Show();
+                    new Personal().Show();
                     this.Close();
                 }
 

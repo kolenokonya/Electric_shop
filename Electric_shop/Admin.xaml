@@ -28,5 +28,7 @@
         <Button Name="AddTovar" Content="Ред. товары" Background="White" Grid.Row="2" Grid.Column="1" Margin="2" Click="AddTovar_Click"/>
         <Button Name="AddKateg" Content="Ред. категории" Background="White" Grid.Row="3" Grid.Column="1" Margin="2" Click="AddKateg_Click"/>
         <Button Name="AddSklad" Content="Ред. склады" Background="White" Grid.Row="1" Grid.Column="2" Margin="2" Click="AddSklad_Click"/>
+        <Button Name="Exit" Content="Выход" Background="White" Grid.Row="4" Grid.Column="4" Margin="2" Click="Exit_Click"/>
+
     </Grid>
 </Window>

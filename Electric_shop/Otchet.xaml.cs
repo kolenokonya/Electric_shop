@@ -139,7 +139,7 @@ namespace Electric_shop
                         Date.Text = reader["Data_postavki"].ToString();
                         Kolich.Text = reader["Kolichestvo_tovara"].ToString();
                         Sklad.SelectedValue = Convert.ToInt32(reader["Sklad_ID"]);
-                        Pers.SelectedValue = Convert.ToInt32(reader["Pers_id"]);
+                        Pers.SelectedValue = Convert.ToInt32(reader["Pers_id"]);    
                         Tovar.SelectedValue = Convert.ToInt32(reader["Tovar_ID"]);
 
 

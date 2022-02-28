@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using Electric_shop.DataBaseTableAdapters;
+using static Electric_shop.DataBase;
 
 namespace Electric_shop
 {
@@ -25,6 +26,8 @@ namespace Electric_shop
         PersonalTableAdapter pers = new PersonalTableAdapter();
         DataBase.PersonalDataTable user = new DataBase.PersonalDataTable();
         string connectionString = ConfigurationManager.ConnectionStrings["Electric_shop.Properties.Settings.Electric_shopConnectionString"].ConnectionString;
+
+
 
         public AddPers()
         {
@@ -40,16 +43,26 @@ namespace Electric_shop
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
+            pers.Fill(user);
+
+            PersonalRow currentUser = user.Where(P => P.Login_Pers == Login.Text).FirstOrDefault();
             try
             {
-
-                if (BDay.SelectedDate <= DateTime.Now)
+                if(currentUser==null)
                 {
-                    pers.InsertQuery(Familiya.Text,Imya.Text,Otchestvo.Text,Login.Text,Password.Text,SeriaPass.Text,NomerPass.Text,BDay.Text,Adres.Text,Telefon.Text,2);
+                    if (BDay.SelectedDate <= DateTime.Now)
+                    {
+                        pers.InsertQuery(Familiya.Text,Imya.Text,Otchestvo.Text,Login.Text,Password.Text,SeriaPass.Text,NomerPass.Text,BDay.Text,Adres.Text,Telefon.Text,2);
 
-                    new Admin().Show();
-                    this.Close();
+                        new Admin().Show();
+                        this.Close();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Такой логин уже существует");
+                }
+
 
             }
             catch { MessageBox.Show("Что-то введено не так"); }
@@ -83,15 +96,25 @@ namespace Electric_shop
 
         private void Change_Click(object sender, RoutedEventArgs e)
         {
+            pers.Fill(user);
+
+            PersonalRow currentUser = user.Where(P => P.Login_Pers == Login.Text).FirstOrDefault();
             try
             {
-                if (Familiya.Text != "" && Imya.Text != "" && Login.Text != ""  && Convert.ToDateTime(BDay.Text) < DateTime.Now && Password.Text != "" && SeriaPass.Text != "" && NomerPass.Text != "" && Convert.ToString(Convert.ToDateTime(BDay.Text)) != "" && Adres.Text != "" && Telefon.Text != "" && LB.SelectedValue != null)
+                if (currentUser == null)
                 {
-                    new PersonalTableAdapter().UpdateQuery(Familiya.Text, Imya.Text, Otchestvo.Text, Login.Text, Password.Text, SeriaPass.Text, NomerPass.Text, BDay.Text, Adres.Text, Telefon.Text, 2, Convert.ToInt32(LB.SelectedValue));
-                    Personal();
-                    Clear();
+                    if (Familiya.Text != "" && Imya.Text != "" && Login.Text != "" && Convert.ToDateTime(BDay.Text) < DateTime.Now && Password.Text != "" && SeriaPass.Text != "" && NomerPass.Text != "" && Convert.ToString(Convert.ToDateTime(BDay.Text)) != "" && Adres.Text != "" && Telefon.Text != "" && LB.SelectedValue != null)
+                    {
+                        new PersonalTableAdapter().UpdateQuery(Familiya.Text, Imya.Text, Otchestvo.Text, Login.Text, Password.Text, SeriaPass.Text, NomerPass.Text, BDay.Text, Adres.Text, Telefon.Text, 2, Convert.ToInt32(LB.SelectedValue));
+                        Personal();
+                        Clear();
+                    }
+                    else MessageBox.Show("Ошибка ввода данных1");
                 }
-                else MessageBox.Show("Ошибка ввода данных1");
+                else
+                {
+                    MessageBox.Show("Такой логин уже существует");
+                }
             }
             catch
             {

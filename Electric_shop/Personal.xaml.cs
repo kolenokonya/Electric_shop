@@ -41,5 +41,11 @@ namespace Electric_shop
             new Otchet().Show();
             this.Close();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Close();
+        }
     }
 }

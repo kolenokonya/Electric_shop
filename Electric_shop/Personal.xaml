@@ -26,5 +26,6 @@
         <Button Name="AddKlient" Content="Ред. клиентов" Background="White" Grid.Row="1" Grid.Column="1" Margin="2" Click="AddKlient_Click"/>
         <Button Name="AddChek" Content="Ред. чеков" Background="White" Grid.Row="2" Grid.Column="1" Margin="2" Click="AddChek_Click"/>
         <Button Name="AddOtch" Content="Ред. отчетов" Background="White" Grid.Row="3" Grid.Column="1" Margin="2" Click="AddOtch_Click"/>
+        <Button Name="Exit" Content="Выход" Background="White" Grid.Row="4" Grid.Column="4" Margin="2" Click="Exit_Click"/>
     </Grid>
 </Window>
